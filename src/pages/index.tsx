@@ -35,7 +35,7 @@ export default function Home() {
               e.preventDefault();
               router.push({
                 pathname: "/user",
-                query: { id: username },
+                query: { username: username },
               });
             }}
           >
