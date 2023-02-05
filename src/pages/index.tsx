@@ -1,10 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import style from "../styles/Home.module.css";
+import { useState } from "react";
 
 import imageURL from "../assets/github_icons/github_500.png";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const [username, setUsername] = useState("");
+  const handleChange = (e: any) => setUsername(e.target.value);
   return (
     <>
       <Head>
@@ -24,13 +29,19 @@ export default function Home() {
           <div className={style.imageContainer}>
             <Image src={imageURL} alt="GitBoard" />
           </div>
-          <div className={style.inputContainer}>
-            <input
-              type="text"
-              placeholder="Enter your github username"
-              className={style.input}
-            />
-          </div>
+          <form
+            className={style.inputContainer}
+            onSubmit={(e) => {
+              e.preventDefault();
+              router.push({
+                pathname: "/user",
+                query: { id: username },
+              });
+            }}
+          >
+            <label htmlFor="username">Find your Github stats</label>
+            <input name="username" type="text" onChange={handleChange} />
+          </form>
         </div>
       </main>
     </>
