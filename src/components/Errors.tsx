@@ -31,13 +31,13 @@ const Errors: React.FC<Props> = ({ error }) => {
                   <article>
                     <p>API rate limit exceeded</p>
                     <small>
-                      HTTP Error 403 - Forbidden means that the client is unable
+                      HTTP Error 403 (Forbidden) means that the client is unable
                       to access the requested resource. This can occur due to
                       various reasons such as authentication failure,
                       insufficient permissions, or when the resource is
                       restricted to specific IP addresses or user-agents. The
                       server returns a 403 response to indicate that the
-                      client's request was valid, but the server will not
+                      clien&APOS;s request was valid, but the server will not
                       fulfill it.
                     </small>
                   </article>
@@ -50,7 +50,7 @@ const Errors: React.FC<Props> = ({ error }) => {
                   <article>
                     <p>User Not found</p>
                     <small>
-                      HTTP Error 404 - Not Found indicates that the server was
+                      HTTP Error 404 (Not Found) indicates that the server was
                       unable to find the requested resource. This error occurs
                       when the client requests a URL that does not exist on the
                       server or the server is unable to locate the requested
@@ -69,17 +69,17 @@ const Errors: React.FC<Props> = ({ error }) => {
                   <article>
                     <p>Bad Request</p>
                     <small>
-                      HTTP Error 400 - Bad Request indicates that the server
+                      HTTP Error 400 (Bad Request) indicates that the server
                       cannot process the request due to invalid syntax. This
                       error occurs when the client sends a request to the server
                       with incorrect or incomplete information, such as an
                       invalid URL, incorrect data in the request headers, or an
                       improperly formatted request body. The server returns a
-                      400 response to indicate that the client's request was
-                      malformed and could not be processed. This error is often
-                      caused by a client-side issue and can be resolved by
-                      checking the client's request for errors and fixing any
-                      issues before sending the request again.
+                      400 response to indicate that the client&APOS;s request
+                      was malformed and could not be processed. This error is
+                      often caused by a client-side issue and can be resolved by
+                      checking the client&APOS;s request for errors and fixing
+                      any issues before sending the request again.
                     </small>
                   </article>
                 </div>
