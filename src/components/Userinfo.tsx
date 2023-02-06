@@ -1,20 +1,25 @@
 import React from "react";
-import Image from "next/image";
-import PropTypes from "prop-types";
-
 import styles from "../styles/Userinfo.module.css";
 
+import { FaSuitcase } from "react-icons/fa";
+import { ImLocation2 } from "react-icons/im";
+import { BsCalendarDate } from "react-icons/bs";
+
 interface UserData {
-  avatar_url: string;
-  name: string;
   login: string;
+  avatar_url: string;
   html_url: string;
+  name: string;
   company: string;
+  blog: string;
   location: string;
-  created_at: string;
+  email: string;
+  bio: string;
   public_repos: number;
+  public_gists: number;
   followers: number;
   following: number;
+  created_at: string;
 }
 
 interface Props {
@@ -25,19 +30,49 @@ const Userinfo: React.FC<Props> = ({ userData }) => {
   return (
     <>
       <div className={styles.userInfo_container}>
-        <div className={styles.imageContainer}>
-          <Image src={userData.avatar_url} alt="user" />
+        <div className={styles.avatar}>
+          <img src={userData.avatar_url} alt={`${userData.name}'s avatar`} />
         </div>
-        <div className={styles.infoContainer}>
+        <div className={styles.userBasicInfo}>
           <h1>{userData.name}</h1>
-          <h2>{userData.login}</h2>
-          <a href={userData.html_url}>Github Profile</a>
-          <p>{userData.company}</p>
-          <p>{userData.location}</p>
-          <p>Joined on {userData.created_at}</p>
-          <p>{userData.public_repos} Repositories</p>
-          <p>{userData.followers} Followers</p>
-          <p>{userData.following} Following</p>
+          <a href={userData.html_url} target="_blank">
+            <code>{`@${userData.login}`}</code>
+          </a>
+          <p>{userData.bio || ""}</p>
+        </div>
+        <div className={styles.userGeneralInfo}>
+          <article className={styles.generalInfo_item}>
+            <FaSuitcase className={styles.infoIcons} />
+            <small>{userData.company || "No company found"}</small>
+          </article>
+          <article className={styles.generalInfo_item}>
+            <ImLocation2 className={styles.infoIcons} />
+            <small>{userData.location || "No location found"}</small>
+          </article>
+          <article className={styles.generalInfo_item}>
+            <BsCalendarDate className={styles.infoIcons} />
+            <small>{`Joined ${new Date(
+              userData.created_at
+            ).toLocaleDateString()}`}</small>
+          </article>
+        </div>
+        <div className={styles.publicInfo}>
+          <article className={styles.publicInfo_item}>
+            <h3>{userData.public_repos}</h3>
+            <small>Repositories</small>
+          </article>
+          <article className={styles.publicInfo_item}>
+            <h3>{userData.public_gists}</h3>
+            <small>Gists</small>
+          </article>
+          <article className={styles.publicInfo_item}>
+            <h3>{userData.followers}</h3>
+            <small>Followers</small>
+          </article>
+          <article className={styles.publicInfo_item}>
+            <h3>{userData.following}</h3>
+            <small>Following</small>
+          </article>
         </div>
       </div>
     </>
