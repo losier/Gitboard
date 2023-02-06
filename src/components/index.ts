@@ -1,4 +1,5 @@
-import Head from "./Head";
+import Heads from "./Heads";
 import Userinfo from "./Userinfo";
+import Errors from "./Errors";
 
-export { Head, Userinfo };
+export { Heads, Userinfo, Errors };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Userinfo } from "../components";
+import { Heads, Userinfo, Errors } from "../components";
 
 const user: React.FC = () => {
   const router = useRouter();

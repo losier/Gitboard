@@ -5,7 +5,7 @@ const defaultTitle = "GitBoard";
 const defaultDescription = "A simple webApp for your github stats";
 const defaultOGURL = "https://gitboard.vercel.app/";
 
-const Head = (props: any) => (
+const Heads = (props: any) => (
   <>
     <NextHead>
       <meta charSet="UTF-8" />
@@ -29,4 +29,4 @@ const Head = (props: any) => (
   </>
 );
 
-export default Head;
+export default Heads;
