@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Heads, Userinfo, Errors } from "../components";
+import styles from "../styles/User.module.css";
 
 const user: React.FC = () => {
   const router = useRouter();
@@ -32,7 +33,7 @@ const user: React.FC = () => {
   }, [username]);
 
   return (
-    <div>
+    <div className={styles.userContainer}>
       <main>{userData && <Userinfo userData={userData} />}</main>
     </div>
   );

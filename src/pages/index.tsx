@@ -27,7 +27,7 @@ export default function Home() {
             Git <span>Board</span>
           </h1>
           <div className={style.imageContainer}>
-            <Image src={imageURL} alt="GitBoard" />
+            <Image className={style.image} src={imageURL} alt="GitBoard" />
           </div>
           <form
             className={style.inputContainer}

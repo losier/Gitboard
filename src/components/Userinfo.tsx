@@ -34,10 +34,12 @@ const Userinfo: React.FC<Props> = ({ userData }) => {
           <img src={userData.avatar_url} alt={`${userData.name}'s avatar`} />
         </div>
         <div className={styles.userBasicInfo}>
-          <h1>{userData.name}</h1>
-          <a href={userData.html_url} target="_blank">
-            <code>{`@${userData.login}`}</code>
-          </a>
+          <div className={styles.name}>
+            <h1>{userData.name}</h1>
+            <a href={userData.html_url} target="_blank">
+              ( <code>{`@${userData.login}`}</code> )
+            </a>
+          </div>
           <p>{userData.bio || ""}</p>
         </div>
         <div className={styles.userGeneralInfo}>
@@ -58,19 +60,35 @@ const Userinfo: React.FC<Props> = ({ userData }) => {
         </div>
         <div className={styles.publicInfo}>
           <article className={styles.publicInfo_item}>
-            <h3>{userData.public_repos}</h3>
+            <h3>
+              {Intl.NumberFormat("en", { notation: "compact" }).format(
+                userData.public_repos
+              )}
+            </h3>
             <small>Repositories</small>
           </article>
           <article className={styles.publicInfo_item}>
-            <h3>{userData.public_gists}</h3>
+            <h3>
+              {Intl.NumberFormat("en", { notation: "compact" }).format(
+                userData.public_gists
+              )}
+            </h3>
             <small>Gists</small>
           </article>
           <article className={styles.publicInfo_item}>
-            <h3>{userData.followers}</h3>
+            <h3>
+              {Intl.NumberFormat("en", { notation: "compact" }).format(
+                userData.followers
+              )}
+            </h3>
             <small>Followers</small>
           </article>
           <article className={styles.publicInfo_item}>
-            <h3>{userData.following}</h3>
+            <h3>
+              {Intl.NumberFormat("en", { notation: "compact" }).format(
+                userData.following
+              )}
+            </h3>
             <small>Following</small>
           </article>
         </div>
