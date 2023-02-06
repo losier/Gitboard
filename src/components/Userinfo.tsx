@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/Userinfo.module.css";
+import Image from "next/image";
 
 import { FaSuitcase } from "react-icons/fa";
 import { ImLocation2 } from "react-icons/im";
@@ -31,12 +32,16 @@ const Userinfo: React.FC<Props> = ({ userData }) => {
     <>
       <div className={styles.userInfo_container}>
         <div className={styles.avatar}>
-          <img src={userData.avatar_url} alt={`${userData.name}'s avatar`} />
+          <img
+            className={styles.img}
+            src={userData.avatar_url}
+            alt={`${userData.name}'s avatar`}
+          />
         </div>
         <div className={styles.userBasicInfo}>
           <div className={styles.name}>
             <h1>{userData.name}</h1>
-            <a href={userData.html_url} target="_blank">
+            <a href={userData.html_url} target="_blank" rel="noreferrer">
               ( <code>{`@${userData.login}`}</code> )
             </a>
           </div>

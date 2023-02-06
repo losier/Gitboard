@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Heads, Userinfo, Errors } from "../components";
 import styles from "../styles/User.module.css";
 
-const user: React.FC = () => {
+const User: React.FC = () => {
   const router = useRouter();
   const username = router.query["username"];
   const [userData, setUserData] = useState(null);
@@ -39,4 +39,4 @@ const user: React.FC = () => {
   );
 };
 
-export default user;
+export default User;
