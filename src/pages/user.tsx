@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Heads, Userinfo, Errors, Charts } from "../components";
+import { Heads, Userinfo, Errors, Charts, Repos } from "../components";
 import styles from "../styles/User.module.css";
 
 const User: React.FC = () => {
@@ -43,6 +43,7 @@ const User: React.FC = () => {
         <main>
           {userData && <Userinfo userData={userData} />}
           {/* {userData && <Charts userName={`${username}`} />} */}
+          {userData && <Repos userName={`${username}`} />}
         </main>
       )}
     </div>
