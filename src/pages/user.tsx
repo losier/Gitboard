@@ -42,7 +42,7 @@ const User: React.FC = () => {
       ) : (
         <main>
           {userData && <Userinfo userData={userData} />}
-          {userData && <Charts userName={`${username}`} />}
+          {/* {userData && <Charts userName={`${username}`} />} */}
         </main>
       )}
     </div>
