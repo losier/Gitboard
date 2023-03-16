@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Heads, Userinfo, Errors, Charts, Repos } from "../components";
+import { Heads, Loading, Userinfo, Errors, Charts, Repos } from "../components";
 import styles from "../styles/User.module.css";
 
 interface RepoData {
@@ -29,6 +29,7 @@ const User: React.FC = () => {
   const [userData, setUserData] = useState(null);
   const [repoData, setRepoData] = useState(null);
   const [error, setError] = useState({ active: false, type: 200 });
+  const [loading, setLoading] = useState(true);
 
   const getUserData = () => {
     fetch(`https://api.github.com/users/${username}`)
@@ -70,19 +71,26 @@ const User: React.FC = () => {
     if (username) {
       getUserData();
       getRepoData();
+      setLoading(false);
     }
   }, [username]);
 
   return (
     <div className={styles.userContainer}>
       <Heads title="User" />
-      {error && error.active ? (
-        <Errors error={error} />
+      {loading ? (
+        <Loading />
       ) : (
-        <main>
-          {userData && <Userinfo userData={userData} />}
-          {repoData && <Repos repoData={repoData} />}
-        </main>
+        <>
+          {error && error.active ? (
+            <Errors error={error} />
+          ) : (
+            <main>
+              {userData && <Userinfo userData={userData} />}
+              {repoData && <Repos repoData={repoData} />}
+            </main>
+          )}
+        </>
       )}
     </div>
   );

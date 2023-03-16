@@ -16,6 +16,23 @@
   --color-light: #fffbeb;
   --color-dark: #181d31;
   --color-dark-light: #65647c;
+  --fg: #17181c;
+  --shade1: #727274;
+  --shade2: #cccdd1;
+  --shade3: #f3f4f8;
+  --shade4: #ffffff;
+  --dur1: 1s;
+  --dur2: 6s;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e3e4e8;
+    --shade1: #23252a;
+    --shade2: #3e424c;
+    --shade3: #4a4e5a;
+    --shade4: #686e7e;
+  }
 }
 
 body {
