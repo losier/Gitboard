@@ -1,6 +1,10 @@
 import { type } from "os";
 import React, { useState } from "react";
 import styles from "../styles/Repos.module.css";
+import { RiGitRepositoryLine } from "react-icons/ri";
+import { BsGlobe, BsGithub, BsFillStarFill } from "react-icons/bs";
+import { BiGitRepoForked } from "react-icons/bi";
+import Link from "next/link";
 
 interface RepoData {
   id: number;
@@ -9,7 +13,6 @@ interface RepoData {
   description: string;
   size: number;
   language: string;
-  open_issues: number;
   forks: number;
   watchers: number;
   license: {
@@ -17,7 +20,6 @@ interface RepoData {
     url: string;
   };
   fork: boolean;
-  created_at: string;
   homepage: string;
 }
 
@@ -54,31 +56,64 @@ const Repos: React.FC<Props> = ({ repoData }) => {
       return (
         <>
           {repo.fork ? null : (
-            <article key={repo.id} className={styles.repoCard}>
-              <div className={styles.repoHeader}>
-                <h3>{repo.name}</h3>
-                <div className={styles.repoInfo}>
-                  <span>{repo.language}</span>
-                  <span>{repo.size} KB</span>
+            <article key={repo.id} className={styles.repo_card}>
+              <div className={styles.card_header}>
+                <div className={styles.card_title}>
+                  <span>
+                    <RiGitRepositoryLine />
+                  </span>
+                  <h1>{repo.name}</h1>
                 </div>
-              </div>
-              <p>{repo.description}</p>
-              <div className={styles.repoFooter}>
-                <div className={styles.repoStats}>
-                  <span>{repo.open_issues} Open Issues</span>
-                  <span>{repo.forks} Forks</span>
-                  <span>{repo.watchers} Watchers</span>
-                </div>
-                <div className={styles.repoLinks}>
-                  <a href={repo.html_url} target="_blank" rel="noreferrer">
-                    View on GitHub
-                  </a>
+                <span>
+                  <Link
+                    className={styles.title_link}
+                    href={repo.html_url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <BsGithub />
+                  </Link>
                   {repo.homepage && (
-                    <a href={repo.homepage} target="_blank" rel="noreferrer">
-                      View Live
-                    </a>
+                    <Link
+                      className={styles.title_link}
+                      href={repo.homepage}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <BsGlobe />
+                    </Link>
                   )}
-                </div>
+                </span>
+              </div>
+              <p className={styles.card_desc}>
+                {repo.description ? repo.description : "No description"}
+              </p>
+              <div className={styles.card_details}>
+                {repo.language ? repo.language : "N/A"}
+                <span>
+                  <BiGitRepoForked /> {repo.forks}
+                </span>
+                <span>
+                  <BsFillStarFill /> {repo.watchers}
+                </span>
+                <span>{repo.size} KB</span>
+              </div>
+
+              <div className={styles.card_footer}>
+                <span>
+                  {repo.license ? (
+                    <Link
+                      className={styles.title_link}
+                      href={`${repo.license.url}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {repo.license.name}
+                    </Link>
+                  ) : (
+                    "No License"
+                  )}
+                </span>
               </div>
             </article>
           )}
@@ -92,7 +127,7 @@ const Repos: React.FC<Props> = ({ repoData }) => {
       return (
         <li
           key={sortType}
-          className={styles.sort__option}
+          className={styles.sort_option}
           onClick={() => {
             setSelectedRepo(sortType);
             toggleDropdown();
@@ -106,18 +141,18 @@ const Repos: React.FC<Props> = ({ repoData }) => {
 
   return (
     <div className={styles.repos}>
-      <div className={styles.repos__header}>
+      <div className={styles.repos_header}>
         <h1>Repositories</h1>
         <div className={styles.sort}>
-          <div className={styles.sort__selected} onClick={toggleDropdown}>
+          <div className={styles.sort_selected} onClick={toggleDropdown}>
             {selectedRepo}
           </div>
           {dropDown && (
-            <ul className={styles.sort__options}>{renderSortOptions()}</ul>
+            <ul className={styles.sort_options}>{renderSortOptions()}</ul>
           )}
         </div>
       </div>
-      <div className={styles.repos__list}>{renderRepos()}</div>
+      <div className={styles.repos_list}>{renderRepos()}</div>
     </div>
   );
 };
