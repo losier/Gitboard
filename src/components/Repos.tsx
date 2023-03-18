@@ -54,7 +54,7 @@ const Repos: React.FC<Props> = ({ repoData }) => {
     const sortedRepos = sortRepos(selectedRepo);
     return sortedRepos.map((repo) => {
       return (
-        <>
+        <div className={styles.repo_list}>
           {repo.fork ? null : (
             <article key={repo.id} className={styles.repo_card}>
               <div className={styles.card_header}>
@@ -117,7 +117,7 @@ const Repos: React.FC<Props> = ({ repoData }) => {
               </div>
             </article>
           )}
-        </>
+        </div>
       );
     });
   };
@@ -152,7 +152,7 @@ const Repos: React.FC<Props> = ({ repoData }) => {
           )}
         </div>
       </div>
-      <div className={styles.repos_list}>{renderRepos()}</div>
+      <div className={styles.repos_container}>{renderRepos()}</div>
     </div>
   );
 };
