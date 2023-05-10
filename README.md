@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [How to Find Your Github Stats on Gitboard](https://app.tango.us/app/workflow/1ce3f70b-495d-471b-afeb-c48ac5511824?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
 
-## Getting Started
+__Creation Date:__ May 10, 2023  
+__Created By:__ Aarab Nishchal  
+[View most recent version on Tango.us](https://app.tango.us/app/workflow/1ce3f70b-495d-471b-afeb-c48ac5511824?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+***
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 1. [Go to gitboard.vercel.app](https://gitboard.vercel.app/)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Type "your username"
+![Step 2 screenshot](https://images.tango.us/workflows/1ce3f70b-495d-471b-afeb-c48ac5511824/steps/526781e7-3152-468d-b376-db815c4ae48f/dd53a5c0-b529-4b4d-bab8-906046e7a0d8.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.8831&fp-z=1.4983&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 3. Submit Find your Github stats
+![Step 3 screenshot](https://images.tango.us/workflows/1ce3f70b-495d-471b-afeb-c48ac5511824/steps/fe0773ff-64d2-4bd9-9003-82dd13ece2ec/e1f0c9c3-4cdf-4bb1-bed5-334e66025c2d.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.8357&fp-z=1.0259&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+***
+Created with [Tango.us](https://tango.us?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
